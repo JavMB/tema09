@@ -1,0 +1,52 @@
+# Ignorar la carpeta de dependencias y el cache de Gradle
+.gradle/
+
+# Ignorar la carpeta build generada por Gradle
+build/
+
+# Ignorar los archivos de configuración específicos de Gradle
+*.gradle
+gradle
+gradlew
+gradlew.bat
+
+# Excepciones para los archivos necesarios en el wrapper de Gradle (no ignorar estos)
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Archivos y carpetas generadas por IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Archivos y carpetas generadas por Eclipse
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# Archivos y carpetas generadas por NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Archivos generados por VS Code
+.vscode/
+
+# Archivos temporales de Mac OS
+.DS_Store
+
+# Archivos de log o temporales
+*.log
+*.swp
+
