@@ -11,7 +11,7 @@ import java.util.List;
      double maximo();
      double sumatorio();
      double media();
-     double moda();
+     double moda();asdasd
 }
  */
 public class Main {
