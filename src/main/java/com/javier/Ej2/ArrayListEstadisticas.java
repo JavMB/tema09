@@ -36,27 +36,27 @@ public class ArrayListEstadisticas implements IEstadisticas {
 
     @Override
     public double moda() {
-        HashMap<Double, Integer> numsMap = new HashMap<>();
-        Integer cantidadRepeticionesDelDouble;
-        Double doubleconMayorNumeroRepeticiones;
+        HashMap<Double, Integer> frecuencias = new HashMap<>();
+        Integer repeticiones;
+        Double moda;
 
         if (!list.isEmpty()) {
-            doubleconMayorNumeroRepeticiones = list.get(0);
-        } else throw new IllegalStateException("La lista no puede estar vacia");
+            moda = list.get(0);
+        } else {
+            throw new IllegalStateException("La lista no puede estar vacia");
+        }
 
+        for (double numero : list) {
+            repeticiones = frecuencias.getOrDefault(numero, 0);
+            repeticiones++;
+            frecuencias.put(numero, repeticiones);
 
-        for (double doubleKey : list) {
-            cantidadRepeticionesDelDouble = numsMap.getOrDefault(doubleKey, 0);
-            cantidadRepeticionesDelDouble++;
-            numsMap.put(doubleKey, cantidadRepeticionesDelDouble);
-
-            if (cantidadRepeticionesDelDouble > numsMap.get(doubleconMayorNumeroRepeticiones)) {
-                doubleconMayorNumeroRepeticiones = doubleKey;
+            if (repeticiones > frecuencias.get(moda)) {
+                moda = numero;
             }
         }
 
-        return doubleconMayorNumeroRepeticiones;
-
+        return moda;
     }
 
 
