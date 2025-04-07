@@ -36,23 +36,24 @@ public class ArrayListEstadisticas implements IEstadisticas {
 
     @Override
     public double moda() {
-        HashMap<Double, Integer> frecuencias = new HashMap<>();
-        Integer repeticiones;
-        Double moda;
-
-        if (!list.isEmpty()) {
-            moda = list.get(0);
-        } else {
-            throw new IllegalStateException("La lista no puede estar vacia");
+        if (list.isEmpty()) {
+            throw new IllegalStateException("La lista no puede estar vacía");
         }
 
+        // 1. Calcular repeticiones
+        HashMap<Double, Integer> repeticiones = new HashMap<>();
         for (double numero : list) {
-            repeticiones = frecuencias.getOrDefault(numero, 0);
-            repeticiones++;
-            frecuencias.put(numero, repeticiones);
+            repeticiones.put(numero, repeticiones.getOrDefault(numero, 0) + 1);
+        }
 
-            if (repeticiones > frecuencias.get(moda)) {
-                moda = numero;
+        // 2. Encontrar la moda usando entrySet()
+        double moda = list.getFirst();
+        int maxFrecuencia = repeticiones.get(moda);
+
+        for (Map.Entry<Double, Integer> entry : repeticiones.entrySet()) {
+            if (entry.getValue() > maxFrecuencia) {
+                moda = entry.getKey();
+                maxFrecuencia = entry.getValue();
             }
         }
 

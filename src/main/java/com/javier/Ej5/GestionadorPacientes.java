@@ -4,13 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
-public class GestionadorPacientes {
-
-    private final List<Paciente> pacientes;
-
-    public GestionadorPacientes(List<Paciente> pacientes) {
-        this.pacientes = pacientes;
-    }
+public record GestionadorPacientes(List<Paciente> pacientes) {
 
     public void agregarPaciente(Paciente paciente) {
         pacientes.add(paciente);
@@ -38,7 +32,7 @@ public class GestionadorPacientes {
         int edadMasJoven = Period.between(edadMenor, LocalDate.now()).getYears();
         int edadMasViejo = Period.between(edadMayor, LocalDate.now()).getYears();
 
-        return new int[]{edadMasJoven, edadMasViejo};
+        return new int[]{edadMasViejo, edadMasJoven};
     }
 
     /**
@@ -72,6 +66,4 @@ public class GestionadorPacientes {
         }
         return "IMC fuera de los rangos esperados";
     }
-
-
 }

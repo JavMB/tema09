@@ -10,11 +10,11 @@ public class Paciente {
     private final String nombre;
     private final LocalDate fechaNac;
     private final char sexo;
-    private final int altural;
+    private final double altural;
     private final double peso;
 
 
-    public Paciente(String nombre, LocalDate fechaNac, char sexo, int altural, double peso) {
+    public Paciente(String nombre, LocalDate fechaNac, char sexo, double altural, double peso) {
         this.id = ++auto;
         this.nombre = nombre;
         this.fechaNac = fechaNac;
@@ -24,6 +24,9 @@ public class Paciente {
     }
 
 
+    public int getId() {
+        return id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -37,7 +40,7 @@ public class Paciente {
         return sexo;
     }
 
-    public int getAltural() {
+    public double getAltural() {
         return altural;
     }
 
