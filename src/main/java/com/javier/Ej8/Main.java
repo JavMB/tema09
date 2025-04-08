@@ -18,27 +18,24 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Introduce la palabra a añadir: ");
-                    String palabraAñadir = IO.leerTexto();
-                    System.out.print("Introduce la definición: ");
-                    String definicionAñadir = IO.leerTexto();
+                    String palabraAñadir = IO.readString("Introduce la palabra a añadir: ");
+                    String definicionAñadir = IO.readString("Introduce la definición: ");
                     diccionario.add(palabraAñadir, definicionAñadir);
                     break;
                 case 2:
-                    System.out.print("Introduce la palabra a modificar: ");
-                    String palabraModificar = IO.leerTexto();
-                    System.out.print("Introduce la nueva definición: ");
-                    String nuevaDefinicion = IO.leerTexto();
+                    String palabraModificar = IO.readString("Introduce la palabra a modificar: ");
+
+                    String nuevaDefinicion = IO.readString("Introduce la nueva definición: ");
                     diccionario.mod(palabraModificar, nuevaDefinicion);
                     break;
                 case 3:
-                    System.out.print("Introduce la palabra a eliminar: ");
-                    String palabraEliminar = IO.leerTexto();
+
+                    String palabraEliminar = IO.readString("Introduce la palabra a eliminar: ");
                     diccionario.remove(palabraEliminar);
                     break;
                 case 4:
-                    System.out.print("Introduce la palabra a consultar: ");
-                    String palabraConsultar = IO.leerTexto();
+
+                    String palabraConsultar = IO.readString("Introduce la palabra a consultar: ");
                     diccionario.search(palabraConsultar);
                     break;
                 case 5:

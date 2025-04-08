@@ -17,9 +17,8 @@ public class Main {
                     int num = Integer.parseInt(sc.nextLine());
                     while (num > 0) {
                         String palabra1, palabra2;
-                        palabra1 = IO.leerTexto();
-                        System.out.println("Introduce palabra en valenciano");
-                        palabra2 = IO.leerTexto();
+                        palabra1 = IO.readString("Introduce palabra en ingles");
+                        palabra2 = IO.readString("Introduce palabra en valenciano");
 
                         traductor.add(palabra1, palabra2);
                         num--;

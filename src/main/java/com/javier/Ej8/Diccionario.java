@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class Diccionario {
-    private final Map<String, String> dict = new HashMap<>();
+    protected final Map<String, String> dict = new HashMap<>();
 
     /**
      *
