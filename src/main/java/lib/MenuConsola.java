@@ -39,7 +39,7 @@ public class MenuConsola {
 
             System.out.print("Elige una opción: ");
             while (!sc.hasNextInt()) {
-                System.out.print("Por favor, introduce un número válido: ");
+                System.out.println("Por favor, introduce un número válido: ");
                 sc.next();
             }
             opcion = sc.nextInt();

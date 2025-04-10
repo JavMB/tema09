@@ -3,7 +3,7 @@ package lib;
 import java.util.Scanner;
 
 public class IO {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     // Método para leer un entero
     public static int readInt(String message) {
@@ -92,13 +92,5 @@ public class IO {
         }
     }
 
-    // Método para imprimir un mensaje
-    public static void print(String message) {
-        System.out.print(message);
-    }
 
-    // Método para imprimir una línea
-    public static void println(String message) {
-        System.out.println(message);
-    }
 }
