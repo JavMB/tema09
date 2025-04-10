@@ -101,13 +101,5 @@ public class Rnd {
         return a * (b / gcd(a, b));
     }
 
-    /**
-     * Genera un número aleatorio con distribución normal (gaussiana).
-     * @param mean Media de la distribución
-     * @param stdDev Desviación estándar
-     * @return Número aleatorio con distribución normal
-     */
-    public static double getGaussian(double mean, double stdDev) {
-        return mean + random.nextGaussian() * stdDev;
-    }
+
 }
